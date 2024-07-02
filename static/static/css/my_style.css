@@ -1,0 +1,350 @@
+.container-fluid {
+    padding: 0 !important;
+    display: flex;
+}
+.btn_check {
+	background-color: #00000000;
+	border: 2px solid #00000000;
+}
+.btn {
+    width: 100%;
+    background-color: #00000021;
+    border: 2px solid #0000001f;
+    font-size: 0.5rem;
+    padding: 0px;
+}
+.btn_report {
+    margin-left: 10px !important;
+    background-color: #eee !important;
+    width: 100px;
+    height: 30px;
+    font-size: 0.8rem;
+}
+.btn-default {
+    width: 80px;
+    background-color: white;
+    height: 30px;
+}
+.btn.focus, .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn.active, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-check {
+    width: 30px;
+    background-color: white;
+    height: 30px;
+    border: none;
+    padding-top: 10px;
+}
+.btn-check.focus, .btn-check:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+.btn-check.active, .btn-check:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+select {
+    width: 100%;
+    border: none;
+    border: solid 1px black;
+    width: 100%;
+}
+
+table.dataTable thead .sorting {
+    background-image: initial !important;
+}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody div.dataTables_scrollHead div.dataTables_scrollFoot div.dataTables_scrollFootInner{
+    overflow: inherit !important;
+}
+.dataTables_scrollHead{
+    overflow: inherit !important;
+}
+.dataTables_scrollBody{
+    overflow: inherit !important;
+}
+.form-inline {
+    display: block !important;
+    font-size: 0.5rem !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    height: 25px !important;
+}
+.dataTables_wrapper .dataTables_length select {
+    height: 25px !important;
+}
+table.dataTable.compact thead th {
+    padding: 1px 4px 1px !important;
+}
+.form-control {
+    font-size: 0.6rem !important;
+    height: 20px;
+}
+table.dataTable tbody tr {
+    font-size: 9px;
+}
+table.dataTable thead {
+    font-size: 10px;
+    margin: 15px;
+}
+.form-inline {
+	display: block !important;
+}
+.group {
+    text-align: left !important;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin-right: 2px;
+}
+input-sm {
+    content: "Note:";
+}
+label {
+    margin-bottom: 0.2rem !important;
+}
+
+.errorlist {
+	color: #ff000000;
+	background-color: #dcdcdc00 !important;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    padding: 0px;
+
+}
+li {
+	list-style-type: none;
+}
+.nonfield {
+	color: black !important;
+	font-size: large !important;
+	text-align: center !important;
+}
+.alert {
+    padding: 0px;
+}
+
+/* Кнопка выпадающего списка*/
+.dropbtn {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: rgb(255 255 255 / 0%);
+    border: none;
+    cursor: pointer;
+    height: 10px;
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: none;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e4feff;
+    min-width: 160px;
+    box-shadow: 6px 8px 5px 0px rgb(0 0 0 / 40%);
+    left: -160px;
+    top: 0px;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {display:block;}
+
+/*--------------МОДАЛЬНОЕ ОКНО---------------*/
+.modal-dialog {
+    max-width: 800px;
+}
+.modal-body {
+    padding: 0 1em 0 !important;
+}
+.modal-header .close {
+    padding: 0.5rem 0rem 0rem;
+}
+[type=search] {
+    border-bottom: solid 1px #ced4da !important;
+    border: 1px solid #ced4da;
+    height: 25px !important;
+}
+.select2-container--default .select2-selection--single {
+    border: none !important;
+    border-bottom: solid 1px red !important;
+}
+.select2-container {
+    width: 100% !important;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    border: none;
+}
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+    display: flex !important;
+    border: none !important;
+}
+input {
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px red;
+    /*margin-top: 0.7rem;*/
+}
+.hr-style {
+    border-top: 10px solid #ff000008 !important;
+}
+label {
+    font-weight: bold;
+}
+.btn-default {
+    border-radius: 3.25rem !important;
+    border: solid #f9dbdb !important;
+    font-size: 0.6rem !important;
+}
+.modal-body {
+    padding: 0 1em 0 !important;
+}
+textarea {
+    width: 100%;
+    height: 65px;
+    border: none;
+    border-bottom: solid 1px red !important;
+}
+input[type=checkbox] {
+    width: 15%;
+    height: 15px;
+    border: solid red;
+}
+.my_label {
+    margin-top: 15px !important;
+}
+
+div.panel-default select {
+    border: none !important;
+    border-bottom: solid 1px red !important;
+    width: 60% !important;
+    border: none;
+}
+div.panel-default textarea {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: solid 1px red !important;
+}
+div.panel-default input[type=checkbox] {
+    width: 2% !important;
+    height: 12px !important;
+    border: solid red !important;
+    margin-bottom: 2rem;
+}
+div.panel-default input[type=hidden] {
+    display: block !important;
+}
+div.panel-default input {
+    width: 50% !important;
+    border: none;
+    border-bottom: solid 1px red !important;
+}
+div.panel-default select {
+    width: 50% !important;
+    border: none;
+    border-bottom: solid 1px red !important;
+}
+div.panel-default label {
+    font-weight: bold;
+    width: 30% !important;
+}
+div.panel-default li {
+    list-style-type: none !important;
+}
+
+.form-group input {
+    margin-top: 0.7rem;
+}
+
+.form-group-sm input {
+    margin-top: 0px;
+}
+
+.form-group-sm {
+    margin-bottom: 0px !important;
+}
+
+/*---------------------------*/
+.wrap-login100 {
+    width: 60%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 5px 5px 5px;
+    box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 10%);
+    -o-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+    -ms-box-shadow: 0 5px 10px 0 rgba(0,0,0,.1);
+}
+.container-login100 {
+    width: 100%;
+    min-height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    padding: 35px 15px 130px;
+    background: #f2f2f2;
+    font-size: 0.6rem !important;
+}
+.input-group-append {
+    margin-left: -1px;
+    margin-top: 17px;
+}
+.input-group-text {
+    display: contents;
+    padding: 0px !important;
+    background-color: none !important;
+    border: none !important;
+}
+
+/* scrollbar */
+.scroll {
+    height: 450px;
+    background: #fff;
+    overflow-x: scroll;
+    scrollbar-color: #999 #333;
+}
+.scroll::-webkit-scrollbar {
+    width: 10px;
+}
+.scroll::-webkit-scrollbar-track {
+    background: white;
+}
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #dc354542;
+    border-radius: 20px;
+    border: 3px solid white;
+}

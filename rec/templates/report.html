@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отчет по времени в офисе</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif; /* Установка шрифта для всего документа */
+    }
+
+    #dateSelector {
+        display: flex;
+        flex-wrap: row;
+        align-items: center;
+        padding: 20px;
+        gap: 10px; /* Добавляет пространство между элементами */
+        justify-content: space-between;
+    }
+
+    input[type="date"], input[type="submit"], input[type="checkbox"] + label {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    input[type="checkbox"] {
+        margin: 5px;
+    }
+
+    #reportContainer {
+        text-align: center;
+        margin-top: 100px; /* Увеличенный отступ сверху */
+    }
+
+    </style>
+</head>
+<body>
+    <div id="dateSelector" style="position: absolute; top: 0; left: 0;">
+        <h1>Выберите дату или неделю</h1>
+        <label>
+            <input type="date" id="reportStartDate" name="StartDate"> Начальная дата
+        </label>
+        <label>
+            <input type="date" id="reportEndDate" name="EndDate" style="display: none;"> Конечная дата
+        </label>
+        <label>
+            <input type="checkbox" id="rangeCheckbox"> Выбрать промежуток
+        </label>
+        <button id="showReportButton">Показать отчет</button>
+    </div>
+    <div id="reportContainer">
+        <!-- Здесь будет отображаться отчет -->
+    </div>
+
+    <script type="text/javascript">
+        document.getElementById('showReportButton').addEventListener('click', loadReport);
+
+        document.getElementById('rangeCheckbox').addEventListener('change', function() {
+            document.getElementById('reportEndDate').style.display = this.checked ? 'block' : 'none';
+        });
+
+        function loadReport() {
+            var startDate = document.getElementById('reportStartDate').value;
+            var endDate = document.getElementById('reportEndDate').value;
+
+            if (document.getElementById('rangeCheckbox').checked && endDate) {
+                var url = `/report-range/${startDate}/${endDate}/`; // URL для запроса данных за промежуток
+            } else {
+                var url = `/report/${startDate}/`; // Текущий URL для одной даты
+            }
+
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('reportContainer').innerHTML = html;  // Вставка HTML ответа сервера
+                })
+                .catch(error => console.error('Ошибка загрузки отчета:', error));
+        }
+    </script>
+</body>
+</html>

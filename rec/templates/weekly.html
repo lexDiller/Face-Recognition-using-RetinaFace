@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Отчет по времени в офисе</title>
+    <style>
+        .positive {
+            color: green;
+        }
+
+        .negative {
+            color: red;
+        }
+        .exits {
+            color: #FF8200;
+            }
+        .late-arrival {
+            color: red
+            }
+        .late {
+            color: red
+            }
+       table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Отчет по времени в офисе</h1>
+
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Время пребывания</th>
+            <th>События без открытия/закрытия интервала</th>
+            <th>Отклонение от нормативного рабочего времени</th>
+            <th>Среднее количество выходов из офиса</th>
+            <th>Количество опозданий</th>
+<!--            <th>Наиболее поздний приход в офис</th>-->
+        </tr>
+        {% for data in report_data %}
+        <tr>
+            <td>{{ data.person }}</td>
+            <td>{{ data.all_time }}</td>
+            <td>{{ data.alarm }}</td>
+            <td class="{% if data.deviation|first == '-' %}negative{% else %}positive{% endif %}">{{ data.deviation }}</td>
+            <td class="{% if data.office_exits_average >= 4 %}exits{% endif %}">{{ data.office_exits_average }}</td>
+            <td class="{% if data.late > 0 %}late-arrival{% endif %}">{{ data.late }}</td>
+<!--            <td class="{% if data.latest_entry > '09:00:00' %}late-arrival{% endif %}">{{ data.latest_entry }}</td>-->
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
+
