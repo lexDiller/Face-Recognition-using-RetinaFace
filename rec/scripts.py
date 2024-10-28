@@ -30,13 +30,13 @@ def face_lets_go():
                         format='%(asctime)s %(levelname)s %(message)s')
     models = {}
     sources = {
-        'camera1': 'rtsp://admin:Player67@10.11.8.253:554/ISAPI/Streaming/Channels/101',
-        'camera2': 'rtsp://admin:Player67@10.11.8.254:554/ISAPI/Streaming/Channels/101'
+        'camera1': 'url_cam1',
+        'camera2': 'url_cam2'
     }
-    onnx_file = '/home/user/PycharmProjects/best_office/officerec/rec/det_10g.onnx'
-    onnx_file1 = '/home/user/PycharmProjects/best_office/officerec/rec/w600k_r50.onnx'
+    onnx_file = './det_10g.onnx'
+    onnx_file1 = './w600k_r50.onnx'
     time_in = None
-    database = pickle.loads(open('/home/user/PycharmProjects/best_office/officerec/rec/yraaa_s_romoy.pickle', 'rb').read())
+    database = pickle.loads(open('./face_embeddings.pickle', 'rb').read())
     last_recognition_time = {key: None for key in database}
     # onnx_file = 'buffalo_l/det_10g.onnx'
     # onnx_file1 = 'buffalo_l/w600k_r50.onnx'
@@ -48,11 +48,9 @@ def face_lets_go():
     models[model.taskname] = model
     det_model = models['detection']
     det_model.prepare(ctx_id=0, input_size=(640, 640), det_thresh=0.5)
-    #embeddings = {'camera1': [], 'camera2': []}
     streams_loader = LoadStreams(sources, imgsz=640, vid_stride=1, buffer=False)
     last_recognition = {}
     last_clear_time = datetime.datetime.now()
-    # person_dict = {'id': {'is_in': False, 'time_in': None, 'time_all': 0}}
     threshold = 0.5
     try:
         while True:
